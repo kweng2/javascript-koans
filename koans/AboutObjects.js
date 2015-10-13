@@ -45,7 +45,7 @@ describe("About Objects", function () {
     };
 
     expect(currentYear).toBe(2015);
-    expect(megalomaniac.calculateAge()).toBe(45;
+    expect(megalomaniac.calculateAge()).toBe(45);
   });
 
   describe("'in' keyword", function () {
@@ -69,20 +69,20 @@ describe("About Objects", function () {
 
       var hasDetonator = "theDetonator" in megalomaniac;
 
-      expect(hasDetonator).toBe();
+      expect(hasDetonator).toBe(false);
     });
   });
 
   it("should know that properties can be added and deleted", function () {
     var megalomaniac = { mastermind : "Agent Smith", henchman: "Agent Smith" };
 
-    expect("secretary" in megalomaniac).toBe();
+    expect("secretary" in megalomaniac).toBe(false);
 
     megalomaniac.secretary = "Agent Smith";
-    expect("secretary" in megalomaniac).toBe("Agent Smith");
+    expect("secretary" in megalomaniac).toBe(true);
 
     delete megalomaniac.henchman;
-    expect("henchman" in megalomaniac).toBe("Agent Smith";
+    expect("henchman" in megalomaniac).toBe(false);
   });
 
 
@@ -96,14 +96,14 @@ describe("About Objects", function () {
       var colouredCircle = new Circle(5);
       colouredCircle.colour = "red";
 
-      expect(simpleCircle.colour).toBe();
+      expect(simpleCircle.colour).toBe(undefined);
       expect(colouredCircle.colour).toBe("red");
 
       Circle.prototype.describe = function () {
         return "This circle has a radius of: " + this.radius;
       };
 
-      expect(simpleCircle.describe()).toBe("This circle has a radius of:10");
-      expect(colouredCircle.describe()).toBe("This circle has a radius of :5");
+      expect(simpleCircle.describe()).toBe("This circle has a radius of: 10");
+      expect(colouredCircle.describe()).toBe("This circle has a radius of: 5");
   });
 });
